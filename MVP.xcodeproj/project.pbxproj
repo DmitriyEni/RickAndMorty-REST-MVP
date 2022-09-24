@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0075F56928DE340F00EBEECC /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0075F56828DE340F00EBEECC /* MainView.xib */; };
 		0075F56B28DE354800EBEECC /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075F56A28DE354800EBEECC /* ModuleBuilder.swift */; };
+		0075F56E28DE7CF000EBEECC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075F56D28DE7CF000EBEECC /* NetworkService.swift */; };
+		0075F57228DE901F00EBEECC /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075F57028DE901F00EBEECC /* PersonCell.swift */; };
+		0075F57328DE901F00EBEECC /* PersonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0075F57128DE901F00EBEECC /* PersonCell.xib */; };
+		0075F57628DE90FD00EBEECC /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075F57528DE90FD00EBEECC /* UIImageView+Extension.swift */; };
 		00A878F028DE1EA200889C8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A878EF28DE1EA200889C8D /* AppDelegate.swift */; };
 		00A878F228DE1EA200889C8D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A878F128DE1EA200889C8D /* SceneDelegate.swift */; };
 		00A878F428DE1EA200889C8D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A878F328DE1EA200889C8D /* MainView.swift */; };
@@ -42,6 +46,10 @@
 /* Begin PBXFileReference section */
 		0075F56828DE340F00EBEECC /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		0075F56A28DE354800EBEECC /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		0075F56D28DE7CF000EBEECC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		0075F57028DE901F00EBEECC /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		0075F57128DE901F00EBEECC /* PersonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonCell.xib; sourceTree = "<group>"; };
+		0075F57528DE90FD00EBEECC /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		00A878EC28DE1EA200889C8D /* MVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A878EF28DE1EA200889C8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00A878F128DE1EA200889C8D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,11 +92,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0075F56C28DE744400EBEECC /* New Group */ = {
+		0075F56C28DE744400EBEECC /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				0075F56D28DE7CF000EBEECC /* NetworkService.swift */,
 			);
-			path = "New Group";
+			path = ServiceLayer;
+			sourceTree = "<group>";
+		};
+		0075F56F28DE8FDF00EBEECC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0075F57028DE901F00EBEECC /* PersonCell.swift */,
+				0075F57128DE901F00EBEECC /* PersonCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0075F57428DE90CF00EBEECC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0075F57528DE90FD00EBEECC /* UIImageView+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		00A878E328DE1EA100889C8D = {
@@ -114,7 +140,8 @@
 		00A878EE28DE1EA200889C8D /* MVP */ = {
 			isa = PBXGroup;
 			children = (
-				0075F56C28DE744400EBEECC /* New Group */,
+				0075F57428DE90CF00EBEECC /* Extension */,
+				0075F56C28DE744400EBEECC /* ServiceLayer */,
 				00A8792328DE32A400889C8D /* MainModule */,
 				00A878EF28DE1EA200889C8D /* AppDelegate.swift */,
 				00A878F128DE1EA200889C8D /* SceneDelegate.swift */,
@@ -147,9 +174,10 @@
 		00A8792328DE32A400889C8D /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				0075F56F28DE8FDF00EBEECC /* Cell */,
 				00A8792428DE32C900889C8D /* Model */,
 				00A8792528DE32D800889C8D /* View */,
-				00A8792628DE32E100889C8D /* Presente */,
+				00A8792628DE32E100889C8D /* Presenter */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -171,12 +199,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		00A8792628DE32E100889C8D /* Presente */ = {
+		00A8792628DE32E100889C8D /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
 				00A8792128DE1F6F00889C8D /* MainPresenter.swift */,
 			);
-			path = Presente;
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +314,7 @@
 				00A878FC28DE1EA600889C8D /* LaunchScreen.storyboard in Resources */,
 				0075F56928DE340F00EBEECC /* MainView.xib in Resources */,
 				00A878F928DE1EA600889C8D /* Assets.xcassets in Resources */,
+				0075F57328DE901F00EBEECC /* PersonCell.xib in Resources */,
 				00A878F728DE1EA200889C8D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,10 +342,13 @@
 			files = (
 				00A8792228DE1F6F00889C8D /* MainPresenter.swift in Sources */,
 				00A878F428DE1EA200889C8D /* MainView.swift in Sources */,
+				0075F57228DE901F00EBEECC /* PersonCell.swift in Sources */,
+				0075F57628DE90FD00EBEECC /* UIImageView+Extension.swift in Sources */,
 				00A878F028DE1EA200889C8D /* AppDelegate.swift in Sources */,
 				00A8792028DE1EE600889C8D /* Person.swift in Sources */,
 				00A878F228DE1EA200889C8D /* SceneDelegate.swift in Sources */,
 				0075F56B28DE354800EBEECC /* ModuleBuilder.swift in Sources */,
+				0075F56E28DE7CF000EBEECC /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
