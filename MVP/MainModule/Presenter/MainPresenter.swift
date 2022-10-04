@@ -19,9 +19,9 @@ protocol MainViewPresenterProtocol {
 }
 
 class MainPresenter: MainViewPresenterProtocol {
-    let view: MainViewProtocol
-    let networkService: NetworkServiceProtocol!
-    var persons: [Person]?
+    private let view: MainViewProtocol
+    private let networkService: NetworkServiceProtocol!
+    internal var persons: [Person]?
     
     required init(view: MainViewProtocol, networkService: NetworkServiceProtocol) {
         self.view = view
