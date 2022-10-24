@@ -6,22 +6,25 @@
 //
 
 import Foundation
+import Metal
 
 protocol MainViewProtocol {
     func succes()
-    func failure(error: Error)
+//    func failure(error: Error)
+    func failure()
+
 }
 
 protocol MainViewPresenterProtocol {
     init(view: MainViewProtocol, networkService: NetworkServiceProtocol)
     func getPerson()
-    var persons: [Person]? { get set }
+    var persons: [Profile]? { get set }
 }
 
 class MainPresenter: MainViewPresenterProtocol {
     private let view: MainViewProtocol
     private let networkService: NetworkServiceProtocol!
-    internal var persons: [Person]?
+    internal var persons: [Profile]?
     
     required init(view: MainViewProtocol, networkService: NetworkServiceProtocol) {
         self.view = view
@@ -30,17 +33,15 @@ class MainPresenter: MainViewPresenterProtocol {
     }
     
     func getPerson() {
-        networkService.getPerson { [weak self] result in
-            guard let self = self else { return }
-            DispatchQueue.main.sync {
-                switch result {
-                case .success(let persons):
-                    self.persons = persons
-                    self.view.succes()
-                case .failure(let error):
-                    self.view.failure(error: error)
-                }
-            }
+        
+        NetworkManager.getUserList { profiles in
+//            guard let profiles = profiles else { return }
+            self.persons = profiles
+            print("getUserList")
+            self.view.succes()
+        } failureBlock: {
+            print("failureBlock")
+            self.view.failure()
         }
     }
 }

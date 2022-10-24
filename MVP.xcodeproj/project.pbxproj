@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		001BDDA52905F0F7001F457F /* BackandAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BDDA42905F0F7001F457F /* BackandAPI.swift */; };
+		001BDDA72905F154001F457F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BDDA62905F154001F457F /* Profile.swift */; };
+		001BDDA92905F716001F457F /* NatworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BDDA82905F716001F457F /* NatworkManager.swift */; };
 		0075F56928DE340F00EBEECC /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0075F56828DE340F00EBEECC /* MainView.xib */; };
 		0075F56B28DE354800EBEECC /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075F56A28DE354800EBEECC /* ModuleBuilder.swift */; };
 		0075F56E28DE7CF000EBEECC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075F56D28DE7CF000EBEECC /* NetworkService.swift */; };
@@ -47,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		001BDDA42905F0F7001F457F /* BackandAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackandAPI.swift; sourceTree = "<group>"; };
+		001BDDA62905F154001F457F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		001BDDA82905F716001F457F /* NatworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatworkManager.swift; sourceTree = "<group>"; };
 		0075F56828DE340F00EBEECC /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		0075F56A28DE354800EBEECC /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		0075F56D28DE7CF000EBEECC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -111,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				0075F56D28DE7CF000EBEECC /* NetworkService.swift */,
+				001BDDA42905F0F7001F457F /* BackandAPI.swift */,
+				001BDDA82905F716001F457F /* NatworkManager.swift */,
 			);
 			path = ServiceLayer;
 			sourceTree = "<group>";
@@ -203,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				00A8791F28DE1EE600889C8D /* Person.swift */,
+				001BDDA62905F154001F457F /* Profile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,7 +243,6 @@
 				0AF79D3A67FCF7BC6382FB49 /* Pods-MVPTests.debug.xcconfig */,
 				C094CC517F3D49879026B85F /* Pods-MVPTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -489,6 +497,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				001BDDA92905F716001F457F /* NatworkManager.swift in Sources */,
 				00A8792228DE1F6F00889C8D /* MainPresenter.swift in Sources */,
 				00A878F428DE1EA200889C8D /* MainView.swift in Sources */,
 				0075F57228DE901F00EBEECC /* PersonCell.swift in Sources */,
@@ -496,6 +505,8 @@
 				00A878F028DE1EA200889C8D /* AppDelegate.swift in Sources */,
 				00A8792028DE1EE600889C8D /* Person.swift in Sources */,
 				00A878F228DE1EA200889C8D /* SceneDelegate.swift in Sources */,
+				001BDDA52905F0F7001F457F /* BackandAPI.swift in Sources */,
+				001BDDA72905F154001F457F /* Profile.swift in Sources */,
 				0075F56B28DE354800EBEECC /* ModuleBuilder.swift in Sources */,
 				0075F56E28DE7CF000EBEECC /* NetworkService.swift in Sources */,
 			);

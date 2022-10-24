@@ -20,7 +20,7 @@ class PersonCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setupCell(person: Person) {
+    func setupCell(person: Profile) {
         nameLabel.text = person.name
         statusLabel.text = "\(person.status) - \(person.type)"
         

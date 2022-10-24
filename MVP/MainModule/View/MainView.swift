@@ -17,6 +17,8 @@ class MainView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+//        tableView.delegate = self
         let nib = UINib(nibName: String(describing: PersonCell.self), bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: String(describing: PersonCell.self))
         spiner.startAnimating()
@@ -25,27 +27,30 @@ class MainView: UIViewController {
 
 extension MainView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.persons?.count ?? 0
+        guard let persons = presenter.persons else { return 2}
+        return persons.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PersonCell.self), for: indexPath) as! PersonCell
-        let persone = presenter.persons?[indexPath.row]
-        if let person = persone {
-            cell.setupCell(person: person)
-            return cell
-        }
+        guard let persone = presenter.persons?[indexPath.row] else { return cell }
+            cell.setupCell(person: persone)
         return cell
-    }}
+    }
+}
 
 extension MainView: MainViewProtocol {
     func succes() {
         tableView.reloadData()
+        spiner.stopAnimating()
+
     }
     
-    func failure(error: Error) {
-        print(error.localizedDescription)
+    func failure() {
+//        func failure(error: Error) {
+
+//        print(error.localizedDescription)
         spiner.stopAnimating()
-        statusLabel.text = error.localizedDescription
+//        statusLabel.text = error.localizedDescription
     }
 }
